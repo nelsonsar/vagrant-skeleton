@@ -12,4 +12,4 @@ class { 'apt_get_update':
     stage => preinstall
 }
 
-include cecap
+include %projectname%
