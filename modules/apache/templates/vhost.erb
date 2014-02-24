@@ -1,10 +1,12 @@
-<VirtualHost *:80>
+Listen <%= port %>
+
+<VirtualHost *:<%= port %>>
     ServerName <%= domain %>
     ServerAdmin admin@<%= domain %>
     DocumentRoot <%= docroot %>
     ErrorLog ${APACHE_LOG_DIR}/<%= domain %>.error_log
     CustomLog ${APACHE_LOG_DIR}/<%= domain %>.access_log common
-    <Directory /var/www/<%= domain %>>
+    <Directory <%= docroot %>>
         Allow from all
         Options +Includes +Indexes +FollowSymLinks
         AllowOverride all
