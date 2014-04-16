@@ -1,4 +1,4 @@
-define apache::vhost ($docroot, $domain, $vhost_name, $port) {
+define apache::vhost ($docroot, $domain, $vhost_name) {
     include apache
     file { "/etc/apache2/sites-available/${vhost_name}.conf":
         content => template("apache/vhost.erb"),
